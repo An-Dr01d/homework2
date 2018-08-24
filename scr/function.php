@@ -18,30 +18,52 @@ echo task1($array, $second = true);
 echo "<br/>";
 echo "<br/>Функция 2";
 echo "<br/>";
+
 function task2(...$args)
 {
     $operator = array_shift($args);
-    echo implode($operator, $args) . ' = ';
-    $first_number = array_shift($args);
-    foreach ($args as $var) {
-        switch ($operator) {
-            case '-':
+    switch ($operator) {
+        case '-':
+            echo implode($operator, $args) . ' = ';
+            $first_number = array_shift($args);
+            foreach ($args as $var) {
                 $first_number -= $var;
-                break;
-            case '+':
+            }
+            echo $first_number;
+            break;
+        case '+':
+            echo implode($operator, $args) . ' = ';
+            $first_number = array_shift($args);
+            foreach ($args as $var) {
                 $first_number += $var;
-                break;
-            case '*':
+            }
+            echo $first_number;
+            break;
+        case '*':
+            echo implode($operator, $args) . ' = ';
+            $first_number = array_shift($args);
+            foreach ($args as $var) {
                 $first_number *= $var;
+            }
+            echo $first_number;
+            break;
+        case '/':
+            if (in_array(0, $args, true)) {
+                echo "Ноль и на ноль делить нельзя, введите другие значения";
                 break;
-            case '/':
-                $first_number /= $var;
+            } else {
+                echo implode($operator, $args) . ' = ';
+                $first_number = array_shift($args);
+                foreach ($args as $var) {
+                    $first_number/= $var;
+                }
+                echo $first_number;
                 break;
-        }
+            }
     }
-    echo $first_number;
 }
-echo task2('*', 3, 2, 10, 5.4);
+
+echo task2('-', 8, 2, 5, 5.4);
 
 echo "<br/>";
 echo "<br/>Функция 3";
