@@ -14,37 +14,39 @@ function task1($array, $second = true)
     }
 }
 echo task1($array, $second = true);
+
 echo "<br/>";
 echo "<br/>Функция 2";
 echo "<br/>";
-function task2(...$args) // Добавляем для первого аргумента переменную
+function task2(...$args)
 {
     $operator = array_shift($args);
-    echo implode($args, $operator) . ' = ';
-    $score = 0; // Переменная, которая помогает избежать проблем при вычислении
-    foreach ($args as $key => $v) {
-        if ($score > 1) { // Условия, для исключения вычислений с первым символом
+    echo implode($operator, $args) . ' = ';
+    $result = array_shift($args);
+    foreach ($args as $var) {
+        if ($result > 1) {
             switch ($operator) {
                 case '-':
-                    $score -= $v;
+                    $result -= $var;
                     break;
                 case '+':
-                    $score += $v;
+                    $result += $var;
                     break;
                 case '*':
-                    $score *= $v;
+                    $result *= $var;
                     break;
                 case '/':
-                    $score /= $v;
+                    $result /= $var;
                     break;
             }
         } else {
-            $score = $v;
+            $result = $var;
         }
     }
-    echo $score;
+    echo $result;
 }
-echo task2('-', 2, 2, 10, 5.4);
+echo task2('-', 3, 2, 10, 5.4);
+
 echo "<br/>";
 echo "<br/>Функция 3";
 echo "<br/>";
@@ -70,3 +72,36 @@ function task3($rows, $cols)
 task3(-8, 8);
 
 echo "<br/>";
+
+echo "<br/>";
+echo "<br/>Функция 4";
+echo "<br/>";
+function task4()
+{
+    echo date('d.m.Y H:i');
+    echo "<br/>";
+    echo mktime(00,00,00, 02, 24, 2016);
+}
+task4();
+echo "<br/>";
+echo "<br/>Функция 5";
+echo "<br/>";
+function task5()
+{
+    $karl = 'Карл у Клары украл Кораллы';
+    echo str_replace('К', '', "$karl");
+    echo "<br/>";
+    $botle = 'Две бутылки лимонада';
+    echo str_replace('Две', 'Три', "$botle");
+}
+task5();
+echo "<br/>";
+echo "<br/>Функция 6";
+echo "<br/>";
+function task6()
+{
+    $data = "Hello again!";
+    file_put_contents('test.txt', $data);
+    echo file_get_contents('test.txt');
+}
+task6();
