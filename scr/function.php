@@ -21,27 +21,22 @@ echo "<br/>";
 function task2(...$args)
 {
     $operator = array_shift($args);
-    $first_number = array_shift($args);
     echo implode($operator, $args) . ' = ';
-    $kostil = 0;
+    $first_number = array_shift($args);
     foreach ($args as $var) {
-        if ($kostil > 0) {
-            switch ($operator) {
-                case '-':
-                    $first_number -= $var;
-                    break;
-                case '+':
-                    $first_number += $var;
-                    break;
-                case '*':
-                    $first_number *= $var;
-                    break;
-                case '/':
-                    $first_number /= $var;
-                    break;
-            }
-        } else {
-            $first_number = $var;
+        switch ($operator) {
+            case '-':
+                $first_number -= $var;
+                break;
+            case '+':
+                $first_number += $var;
+                break;
+            case '*':
+                $first_number *= $var;
+                break;
+            case '/':
+                $first_number /= $var;
+                break;
         }
     }
     echo $first_number;
