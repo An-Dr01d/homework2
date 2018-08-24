@@ -21,31 +21,32 @@ echo "<br/>";
 function task2(...$args)
 {
     $operator = array_shift($args);
+    $first_number = array_shift($args);
     echo implode($operator, $args) . ' = ';
-    $result = array_shift($args);
+    $kostil = 0;
     foreach ($args as $var) {
-        if ($result > 1) {
+        if ($kostil > 0) {
             switch ($operator) {
                 case '-':
-                    $result -= $var;
+                    $first_number -= $var;
                     break;
                 case '+':
-                    $result += $var;
+                    $first_number += $var;
                     break;
                 case '*':
-                    $result *= $var;
+                    $first_number *= $var;
                     break;
                 case '/':
-                    $result /= $var;
+                    $first_number /= $var;
                     break;
             }
         } else {
-            $result = $var;
+            $first_number = $var;
         }
     }
-    echo $result;
+    echo $first_number;
 }
-echo task2('-', 3, 2, 10, 5.4);
+echo task2('*', 3, 2, 10, 5.4);
 
 echo "<br/>";
 echo "<br/>Функция 3";
