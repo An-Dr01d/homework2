@@ -1,14 +1,14 @@
 <?php
 
-$array = array('имя', 'почта', 'телефон');
+
 function task1($array, $second = true)
 {
-    if ($second == false) {
-        $masseffect = implode(" ", $array);
-        echo $masseffect;
+    if ($second) {
+        $info = "<p>" . implode("</p><p>", $array) . "</p>";
+        echo $info;
     } else {
-        $masseffect = implode("<p> </p>", $array);
-        return $masseffect;
+        $info = implode(" ", $array);
+        return $info;
     }
 }
 

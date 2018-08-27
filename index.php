@@ -3,6 +3,7 @@ require("src/functions.php");
 
 echo "Функция 1";
 echo "<br/>";
+$array = array('имя', 'почта', 'телефон');
 echo task1($array, $second = true);
 echo "<br/>";
 echo "Функция 2";
