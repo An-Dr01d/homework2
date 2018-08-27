@@ -11,7 +11,6 @@ function task1($array, $second = true)
         return $masseffect;
     }
 }
-echo task1($array, $second = true);
 
 function task2(...$args)
 {
@@ -57,8 +56,6 @@ function task2(...$args)
     }
 }
 
-echo task2('-', 8, 2, 5, 5.4);
-
 function task3($rows, $cols)
 {
     if ($rows < 1 || $cols < 1) {
@@ -78,30 +75,25 @@ function task3($rows, $cols)
         echo $table;
     }
 }
-task3(-8, 8);
 
 function task4()
 {
     echo date('d.m.Y H:i');
-    echo "<br/>";
+    echo "<br />";
     echo mktime(00,00,00, 02, 24, 2016);
 }
-task4();
+
 
 function task5()
 {
-    $karl = 'Карл у Клары украл Кораллы';
+    $karl = "Карл у Клары украл Кораллы<br/>";
     echo str_replace('К', '', "$karl");
-    echo "<br/>";
-    $botle = 'Две бутылки лимонада';
+    $botle = "Две бутылки лимонада";
     echo str_replace('Две', 'Три', "$botle");
 }
-task5();
-
 function task6()
 {
     $data = "Hello again!";
     file_put_contents('test.txt', $data);
     echo file_get_contents('test.txt');
 }
-task6();
