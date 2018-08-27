@@ -1,7 +1,5 @@
 <?php
 
-echo "<br/>Функция 1";
-echo "<br/>";
 $array = array('имя', 'почта', 'телефон');
 function task1($array, $second = true)
 {
@@ -14,10 +12,6 @@ function task1($array, $second = true)
     }
 }
 echo task1($array, $second = true);
-
-echo "<br/>";
-echo "<br/>Функция 2";
-echo "<br/>";
 
 function task2(...$args)
 {
@@ -65,9 +59,6 @@ function task2(...$args)
 
 echo task2('-', 8, 2, 5, 5.4);
 
-echo "<br/>";
-echo "<br/>Функция 3";
-echo "<br/>";
 function task3($rows, $cols)
 {
     if ($rows < 1 || $cols < 1) {
@@ -89,11 +80,6 @@ function task3($rows, $cols)
 }
 task3(-8, 8);
 
-echo "<br/>";
-
-echo "<br/>";
-echo "<br/>Функция 4";
-echo "<br/>";
 function task4()
 {
     echo date('d.m.Y H:i');
@@ -101,9 +87,7 @@ function task4()
     echo mktime(00,00,00, 02, 24, 2016);
 }
 task4();
-echo "<br/>";
-echo "<br/>Функция 5";
-echo "<br/>";
+
 function task5()
 {
     $karl = 'Карл у Клары украл Кораллы';
@@ -113,9 +97,7 @@ function task5()
     echo str_replace('Две', 'Три', "$botle");
 }
 task5();
-echo "<br/>";
-echo "<br/>Функция 6";
-echo "<br/>";
+
 function task6()
 {
     $data = "Hello again!";
